@@ -65,6 +65,18 @@
             <version>0.9.0</version>
         </dependency>
 
+
+        <dependency>
+            <groupId>net.sf.JRecord</groupId>
+            <artifactId>JRecord</artifactId>
+            <version>0.80.8</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.JRecord</groupId>
+            <artifactId>cb2xml</artifactId>
+            <version>0.80.8</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -84,6 +96,28 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.0.1</version>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/libs</outputDirectory>
+                            <overWriteReleases>false</overWriteReleases>
+                            <overWriteSnapshots>true</overWriteSnapshots>
+                            <excludeTransitive>true</excludeTransitive>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
     </build>
 </project>

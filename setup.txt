@@ -1,0 +1,17 @@
+
+mvn install:install-file -DgroupId=net.sf.JRecord -DartifactId=JRecord -Dversion=0.80.8 \
+-Dpackaging=jar -Dfile=lib/JRecord.jar
+
+mvn install:install-file -DgroupId=net.sf.JRecord -DartifactId=cb2xml -Dversion=0.80.8 \
+-Dpackaging=jar -Dfile=lib/cb2xml.jar
+
+    <dependency>
+      <groupId>net.sf.JRecord</groupId>
+      <artifactId>JRecord</artifactId>
+      <version>0.80.8</version>
+    </dependency>
+    <dependency>
+      <groupId>net.sf.JRecord</groupId>
+      <artifactId>cb2xml</artifactId>
+      <version>0.80.8</version>
+    </dependency>
